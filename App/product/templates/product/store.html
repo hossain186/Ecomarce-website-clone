@@ -156,7 +156,17 @@
                                 <del class="price-old">Tk 1980</del>
                             </div> <!-- price-wrap.// -->
                         </div>
+                        
+                        {% if product.stock == 0 %}
+
+                            <span class="text-danger">Out Of Stock</span>
+
+                        {% else %}
                         <a href="{% url 'add_cart' product.id %}" class="btn btn-block btn-success">Added to cart </a>
+                            
+                        {% endif %}
+                            
+                        
                     </figcaption>
                 </figure>
             </div> <!-- col.// -->

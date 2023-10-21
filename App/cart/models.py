@@ -24,4 +24,4 @@ class Cart_Item(models.Model):
 
     def __str__(self):
 
-        return self.product
+        return self.product.product_name
