@@ -1,6 +1,6 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, HttpResponse
 
-from product.models import Product
+from product.models import Product,Variation
 from category.models import Category
 from cart.models import Cart_Item
 from cart.views import _cart_id
@@ -41,6 +41,10 @@ def store(request, category_slug= None):
 def product_detail(request, category_slug, product_slug):
 
     product = get_object_or_404(Product, category__slug = category_slug, slug = product_slug)
+
+    
+
+    
 
     in_cart = Cart_Item.objects.filter(cart__cart_id = _cart_id(request), product = product).exists()
 
