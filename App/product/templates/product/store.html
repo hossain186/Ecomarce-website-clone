@@ -132,6 +132,10 @@
                 </div>
         </header><!-- sect-heading -->
         
+        
+        {% if  products %}
+            
+       
         <div class="row">
 
             
@@ -175,6 +179,15 @@
         
             
         </div> <!-- row end.// -->
+
+        {% else %}
+
+            <div class="text">
+                <H2>No item found</H2>
+            </div>
+
+        {% endif %}
+            
         
         
         <nav class="mt-4" aria-label="Page navigation sample">
