@@ -46,6 +46,7 @@ def add_cart(request, product_id):
 
 
     if is_cartitem_exist :
+        
         cart_item = Cart_Item.objects.filter(product= product, cart = cart)
         #existing variation ,  
         # current_variation
