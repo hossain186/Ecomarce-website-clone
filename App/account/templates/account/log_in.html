@@ -9,7 +9,21 @@
 <section class="section-conten padding-y" style="min-height:84vh">
 
     <!-- ============================ COMPONENT LOGIN   ================================= -->
-        <div class="card mx-auto" style="max-width: 380px; margin-top:100px;">
+    
+    
+    {% if request.GET.command == "varification" %}
+
+      <div class="container card mx-auto alert-info text-center" role="alert" style="max-width: 1024px; margin-top: 100px;">
+
+        We have sent you a varification email to your email address {{ request.GET.email }}
+        
+        Already varified <a href="{% url 'log_in' %}">Login</a>
+      </div>
+
+    {% else %}
+    
+    
+    <div class="card mx-auto" style="max-width: 380px; margin-top:100px;">
           <div class="card-body">
           <h4 class="card-title mb-4">Sign in</h4>
           {% include 'alart.html' %}
@@ -37,7 +51,8 @@
          <br><br>
     <!-- ============================ COMPONENT LOGIN  END.// ================================= -->
     
-    
+    {% endif %}
+      
     </section>
     <!-- ========================= SECTION CONTENT END// ========================= -->
     
